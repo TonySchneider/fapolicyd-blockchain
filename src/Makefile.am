@@ -38,6 +38,7 @@ libfapolicyd_la_SOURCES = \
 	library/file.h \
 	library/file-backend.c \
 	library/blockchain-backend.c \
+	library/generate_file_hash.c \
 	library/gcc-attributes.h \
 	library/llist.c \
 	library/llist.h \
