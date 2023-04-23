@@ -281,8 +281,11 @@ int trust_file_load(const char *fpath, list_t *list)
 			return 2;
 		}
 
+		printf("data (before asprintf condition) - %s\n", data);
 		if (asprintf(&data, DATA_FORMAT, tsource, sz, sha) == -1)
 			data = NULL;
+
+		printf("data (after asprintf condition) - %s\n", data);
 
 		// if old format unescape
 		index = escaped ? unescape(name) : strdup(name);
@@ -308,6 +311,9 @@ int trust_file_load(const char *fpath, list_t *list)
 			free(index);
 			free(data);
 		}
+
+		printf("Printing list inside 'list_append' condition:\n");
+		print_list(list);
 	}
 
 	fclose(file);

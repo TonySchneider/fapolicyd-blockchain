@@ -153,3 +153,15 @@ void list_merge(list_t *dest, list_t *src)
 	}
 	list_init(src);
 }
+
+void print_list(list_t *list) {
+    printf("List contains %ld items:\n", list->count);
+
+    list_item_t *curr = list->first;
+    while (curr != NULL) {
+        printf("Index: %s, Data: %s\n", (char *) curr->index, (char *) curr->data);
+        curr = curr->next;
+    }
+
+    printf("\n");
+}

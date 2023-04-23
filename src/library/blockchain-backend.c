@@ -1,5 +1,5 @@
 /*
- * file-backend.c - file backend
+ * blockchain-backend.c - file backend
  * Copyright (c) 2020 Red Hat Inc.
  * All Rights Reserved.
  *
@@ -19,9 +19,7 @@
  * Boston, MA 02110-1335, USA.
  *
  * Authors:
- *   Radovan Sroka <rsroka@redhat.com>
- *   Steve Grubb <sgrubb@redhat.com>
- *   Zoltan Fridrich <zfridric@redhat.com>
+ *   Tony Schneider <tony.schneider@kyndryl.com>
  */
 
 #include "config.h"
@@ -39,9 +37,9 @@ static int file_init_backend(void);
 static int file_load_list(const conf_t *conf);
 static int file_destroy_backend(void);
 
-backend file_backend =
+backend blockchain_backend =
 {
-	"file",
+	"blockchain",
 	file_init_backend,
 	file_load_list,
 	file_destroy_backend,
@@ -52,20 +50,20 @@ backend file_backend =
 
 static int file_load_list(const conf_t *conf)
 {
-	msg(LOG_DEBUG, "Loading test backend");
-	list_empty(&file_backend.list);
-	trust_file_load_all(&file_backend.list);
+	msg(LOG_DEBUG, "Loading blockchain backend");
+	list_empty(&blockchain_backend.list);
+	trust_file_load_all(&blockchain_backend.list);
 	return 0;
 }
 
 static int file_init_backend(void)
 {
-	list_init(&file_backend.list);
+	list_init(&blockchain_backend.list);
 	return 0;
 }
 
 static int file_destroy_backend(void)
 {
-	list_empty(&file_backend.list);
+	list_empty(&blockchain_backend.list);
 	return 0;
 }

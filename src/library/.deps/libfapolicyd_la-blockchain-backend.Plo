@@ -1,0 +1,56 @@
+library/libfapolicyd_la-blockchain-backend.lo: \
+ library/blockchain-backend.c /usr/include/stdc-predef.h ../config.h \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+ library/fapolicyd-backend.h library/conf.h /usr/include/pwd.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/bits/types/FILE.h library/llist.h library/message.h \
+ /usr/include/syslog.h /usr/include/sys/syslog.h \
+ /usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h \
+ /usr/include/bits/syslog-path.h library/trust-file.h
+
+/usr/include/stdc-predef.h:
+
+../config.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h:
+
+library/fapolicyd-backend.h:
+
+library/conf.h:
+
+/usr/include/pwd.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/bits/types/FILE.h:
+
+library/llist.h:
+
+library/message.h:
+
+/usr/include/syslog.h:
+
+/usr/include/sys/syslog.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
+
+/usr/include/bits/syslog-path.h:
+
+library/trust-file.h:

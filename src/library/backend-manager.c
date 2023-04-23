@@ -33,6 +33,7 @@
 #include "backend-manager.h"
 #include "fapolicyd-backend.h"
 
+extern backend blockchain_backend;
 extern backend file_backend;
 #ifdef USE_RPM
 extern backend rpm_backend;
@@ -40,6 +41,7 @@ extern backend rpm_backend;
 
 static backend* compiled[] =
 {
+	&blockchain_backend,
 	&file_backend,
 #ifdef USE_RPM
 	&rpm_backend,

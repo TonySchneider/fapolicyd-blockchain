@@ -102,6 +102,8 @@ const char *lookup_tsource(unsigned int tsource)
 		return "rpmdb";
 	case SRC_FILE_DB:
 		return "filedb";
+	case SRC_BLOCKCHAIN:
+		return "blockchaindb";
 	}
 	return "src_unknown";
 }
