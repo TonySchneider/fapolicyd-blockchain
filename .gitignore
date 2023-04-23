@@ -145,3 +145,13 @@ src/tests/Makefile
 src/tests/Makefile.in
 src/tests/.deps/avl_test.Po
 src/tests/.deps/gid_proc_test.Po
+
+src/library/.deps/libfapolicyd_la-blockchain-backend.Plo
+src/library/.deps/libfapolicyd_la-blockchain-helpers.Plo
+src/library/.deps/libfapolicyd_la-file-hash.Plo
+src/library/libfapolicyd_la-blockchain-backend.lo
+src/library/libfapolicyd_la-blockchain-backend.o
+src/library/libfapolicyd_la-blockchain-helpers.lo
+src/library/libfapolicyd_la-blockchain-helpers.o
+src/library/libfapolicyd_la-file-hash.lo
+src/library/libfapolicyd_la-file-hash.o

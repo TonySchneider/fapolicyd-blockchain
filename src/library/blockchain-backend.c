@@ -30,7 +30,7 @@
 #include "llist.h"
 #include "message.h"
 #include "trust-file.h"
-
+#include "blockchain-helpers.h"
 
 
 static int file_init_backend(void);
@@ -52,7 +52,7 @@ static int file_load_list(const conf_t *conf)
 {
 	msg(LOG_DEBUG, "Loading blockchain backend");
 	list_empty(&blockchain_backend.list);
-	trust_file_load_all(&blockchain_backend.list);
+	load_trusted_file_names(&blockchain_backend.list);
 	return 0;
 }
 

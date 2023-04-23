@@ -24,17 +24,17 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#define DAEMON_PATH     "/usr/sbin/fapolicyd"
-#define CONFIG_FILE     "/etc/fapolicyd/fapolicyd.conf"
-#define OLD_RULES_FILE  "/etc/fapolicyd/fapolicyd.rules"
-#define RULES_FILE      "/etc/fapolicyd/compiled.rules"
-#define TRUST_DIR_PATH  "/etc/fapolicyd/trust.d/"
-#define TRUST_FILE_PATH "/etc/fapolicyd/fapolicyd.trust"
-#define DB_DIR          "/var/lib/fapolicyd"
-#define DB_NAME         "trust.db"
-#define REPORT          "/var/log/fapolicyd-access.log"
-#define STAT_REPORT     "/run/fapolicyd.state"
-#define fifo_path       "/run/fapolicyd/fapolicyd.fifo"
-#define pidfile         "/run/fapolicyd.pid"
-
+#define DAEMON_PATH                "/usr/sbin/fapolicyd"
+#define CONFIG_FILE                "/etc/fapolicyd/fapolicyd.conf"
+#define OLD_RULES_FILE             "/etc/fapolicyd/fapolicyd.rules"
+#define RULES_FILE                 "/etc/fapolicyd/compiled.rules"
+#define TRUST_DIR_PATH             "/etc/fapolicyd/trust.d/"
+#define TRUST_FILE_PATH            "/etc/fapolicyd/fapolicyd.trust"
+#define DB_DIR                     "/var/lib/fapolicyd"
+#define DB_NAME                    "trust.db"
+#define REPORT                     "/var/log/fapolicyd-access.log"
+#define STAT_REPORT                "/run/fapolicyd.state"
+#define fifo_path                  "/run/fapolicyd/fapolicyd.fifo"
+#define pidfile                    "/run/fapolicyd.pid"
+#define BLOCKCHAIN_TRUST_FILE_PATH "/etc/fapolicyd/blockchain-file-list.trust"
 #endif

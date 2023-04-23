@@ -6,7 +6,7 @@
 int sha256_file(char* path, unsigned char* hash) {
     FILE* file = fopen(path, "rb");
     if (!file) {
-        return 0;
+        return -1;
     }
 
     SHA256_CTX ctx;
@@ -22,5 +22,5 @@ int sha256_file(char* path, unsigned char* hash) {
     SHA256_Final(hash, &ctx);
 
     fclose(file);
-    return 1;
+    return 0;
 }
