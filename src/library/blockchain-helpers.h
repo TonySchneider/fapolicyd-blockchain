@@ -13,8 +13,8 @@
 
 const char *target_file_name;
 const list_t* glob_list;
-int target_file_size = 0;
+int target_file_size;
 
 static int validate_file(const char *file_path, const struct stat *sbuf, int type);
 static void append_verified_files(const char* file_name, list_t* list);
-void load_trusted_file_names(const char* file_path, list_t* list);
+void load_trusted_file_names(list_t* list);

@@ -3,4 +3,5 @@
 
 #define BUFSIZE 4096
 
-int sha256_file(char* path, unsigned char* hash);
+char* sha256_file(char* path);
+char* hex_bytes_to_string(unsigned char* hex_bytes, size_t length);

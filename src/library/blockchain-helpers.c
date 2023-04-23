@@ -31,27 +31,31 @@ static int validate_file(const char *file_path, const struct stat *sbuf, int typ
             file_size = sbuf->st_size;
             
             // generate sha256 hash value
-            if (sha256_file(file_path, hash_value) == -1){
-                free(target_file_name);
-                return 1;
-            }
+            hash_value = sha256_file(file_path);
 
-            // define a data string format - "backend_number file_size hash_value"
-            if (asprintf(&data, DATA_FORMAT, tsource, file_size, hash_value) == -1){
+            if (hash_value == NULL){
                 free(target_file_name);
                 return 1;
             }
             
+            printf("Got hash value of %s: %s\n", (char *) file_path, hash_value);
             // Add a new item for the line and add it to the list
             if (verified){
+                // define a data string format - "backend_number file_size hash_value"
+                if (asprintf(&data, DATA_FORMAT, tsource, file_size, hash_value) == -1){
+                    free(target_file_name);
+                    return 1;
+                }
+
                 if (list_append(glob_list, file_path, data)) {
                 free(target_file_name);
                 free(data);
                 }
-                printf("The file '%s' is verified & added to the list", file_path);
+
+                printf("The file '%s' is verified & added to the list\n", file_path);
             }
             else {
-                printf("The file '%s' is not a trust file", file_path);
+                printf("The file '%s' is not a trust file\n", file_path);
             }
         }
     }
@@ -62,8 +66,9 @@ static void append_verified_files(const char* file_name, list_t* list){
     target_file_name = file_name;
     target_file_size = strlen(file_name);
 
+    printf("Handling '%s' trust file\n", (char *) file_name);
     // Search, generate hash, get verification & append the list
-    ftw(".", validate_file, MAX_PATH_LENGTH);
+    ftw("/", validate_file, MAX_PATH_LENGTH);
 }
 
 /**
@@ -81,6 +86,7 @@ void load_trusted_file_names(list_t* list) {
         exit(EXIT_FAILURE);
     }
 
+    printf("Loading blockchain file names\n");
     while (fgets(line, sizeof(line), fp)) {
         // Remove newline character at the end of the line
         line[strcspn(line, "\n")] = '\0';
