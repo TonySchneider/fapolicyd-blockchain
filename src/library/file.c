@@ -866,3 +866,19 @@ rewind_out:
 	return info;
 }
 
+long get_file_size(char *filename) {
+    FILE *fp;
+    long size;
+
+    fp = fopen(filename, "rb");
+    if (fp == NULL) {
+        printf("Error opening file\n");
+        return -1;
+    }
+
+    fseek(fp, 0L, SEEK_END);
+    size = ftell(fp); // get the position of the file pointer, which is the size of the file in bytes
+    fclose(fp);
+
+    return size;
+}

@@ -155,3 +155,4 @@ src/library/libfapolicyd_la-blockchain-helpers.lo
 src/library/libfapolicyd_la-blockchain-helpers.o
 src/library/libfapolicyd_la-file-hash.lo
 src/library/libfapolicyd_la-file-hash.o
+config.h.in~

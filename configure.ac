@@ -96,6 +96,8 @@ AC_CHECK_LIB(magic, magic_descriptor, , [AC_MSG_ERROR([libmagic not found])], -l
 AC_CHECK_LIB(cap-ng, capng_change_id, , [AC_MSG_ERROR([libcap-ng not found])], -lcap-ng)
 AC_CHECK_LIB(seccomp, seccomp_rule_add, , [AC_MSG_ERROR([libseccomp not found])], -lseccomp)
 AC_CHECK_LIB(lmdb, mdb_env_create, , [AC_MSG_ERROR([liblmdb not found])], -llmdb)
+AC_CHECK_LIB(curl, curl_easy_init, , [AC_MSG_ERROR([libcurl not found])], -lcurl)
+AC_CHECK_LIB(jansson, json_loads, , [AC_MSG_ERROR([libjansson not found])], -ljansson)
 
 LD_SO_PATH
 

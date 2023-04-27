@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <openssl/sha.h>
 
-#define BUFSIZE 4096
+# include "file.h"
+
+// maximum 2 MB file size, we can decide on something else.
+#define BUFSIZE 1048576
 
 char* sha256_file(char* path) {
     FILE* file = fopen(path, "rb");
