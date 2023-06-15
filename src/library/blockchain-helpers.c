@@ -14,8 +14,8 @@
 
 #define MAX_PATH_LENGTH 4096
 
-const char *target_file_name;
-const list_t* glob_list;
+const char *target_file_name = NULL;
+const list_t *glob_list = NULL;
 int target_file_length = 0;
 
 int get_is_verified(const char* json_string) {

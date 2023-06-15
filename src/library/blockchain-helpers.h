@@ -11,8 +11,8 @@
 
 #define MAX_PATH_LENGTH 4096
 
-const char *target_file_name;
-const list_t* glob_list;
+extern const char *target_file_name;
+extern const list_t *glob_list;
 int target_file_size;
 
 static int validate_file(const char *file_path, const struct stat *sbuf, int type);

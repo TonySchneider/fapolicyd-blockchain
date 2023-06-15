@@ -3,6 +3,9 @@
 # First, register your username:
 subscription-manager register --username tonyschneider05
 
+# update dnf packages
+dnf update
+
 # Install essential packages:
 dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf install -y rpm-libs
@@ -37,6 +40,9 @@ dnf install -y libcurl-devel
 dnf install -y jansson-devel
 yum install -y json-c-devel
 yum install -y cJSON-devel
+dnf install -y automake
+dnf install -y libtool
+dnf install -y openssl-devel
 
 # Clone fapolicyd from its repository and navigate to the cloned directory:
 git clone https://github.com/TonySchneider/fapolicyd-blockchain
