@@ -48,6 +48,11 @@ dnf install -y openssl-devel
 git clone https://github.com/TonySchneider/fapolicyd-blockchain
 cd fapolicyd
 
+# extract and move config files
+mkdir -p -- "/etc/fapolicyd"
+tar -xvzf fapolicyd-config-files.tar.gz -C /etc/fapolicyd
+
+
 # Build the executable:
 ./autogen.sh
 ./configure --with-audit --disable-shared
