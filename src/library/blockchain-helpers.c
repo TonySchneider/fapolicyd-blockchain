@@ -93,6 +93,8 @@ static int validate_file(const char *file_path, const struct stat *sbuf, int typ
     filename_with_delim = malloc(strlen(target_file_name) + strlen(delim) + 1);
     sprintf(filename_with_delim, "%s%s", delim, target_file_name);
 
+    printf("Checking '%s'...\n", file_path);
+
     if (type == FTW_F) {
         if(strcmp(&file_path[current_file_path_size - strlen(filename_with_delim)], filename_with_delim) == 0){
             free(filename_with_delim);

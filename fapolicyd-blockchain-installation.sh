@@ -11,12 +11,6 @@ dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarc
 dnf install -y rpm-libs
 yum install -y rpm-devel
 
-# Packages from specific repositories are required:
-
-# For CentOS 8:
-dnf --enablerepo=powertools install -y uthash-devel file-devel lmdb-devel
-
-# For Enterprise RHEL 9:
 # Download necessary packages:
 wget https://rhel.pkgs.org/9/epel-x86_64/uthash-devel-2.3.0-1.el9.noarch.rpm.html
 wget https://mirror.stream.centos.org/9-stream/CRB/x86_64/os/Packages/file-devel-5.39-12.el9.x86_64.rpm
@@ -52,11 +46,23 @@ cd fapolicyd
 mkdir -p -- "/etc/fapolicyd"
 tar -xvzf fapolicyd-config-files.tar.gz -C /etc/fapolicyd
 
-
 # Build the executable:
 ./autogen.sh
 ./configure --with-audit --disable-shared
 make
 
+# prepare user, permissions & directories
+mkdir -p /etc/fapolicyd/{rules.d,trust.d}
+mkdir -p /var/lib/fapolicyd/
+mkdir --mode=0755 -p /usr/share/fapolicyd/
+mkdir -p /usr/lib/tmpfiles.d/
+mkdir --mode=0755 -p /run/fapolicyd/
+useradd -r -M -d /var/lib/fapolicyd -s /sbin/nologin -c "Application Whitelisting Daemon" fapolicyd
+chown root:fapolicyd /etc/fapolicyd/
+chown root:fapolicyd /etc/fapolicyd/rules.d/
+chown root:fapolicyd /etc/fapolicyd/trust.d/
+chown root:fapolicyd /var/lib/fapolicyd/
+chown root:fapolicyd /usr/share/fapolicyd/
+
 # Run the compiled project in debug mode:
-# ./src/fapolicyd —debug
+# ./src/fapolicyd --debug
