@@ -52,7 +52,7 @@ backend file_backend =
 
 static int file_load_list(const conf_t *conf)
 {
-	msg(LOG_DEBUG, "Loading test backend");
+	msg(LOG_DEBUG, "Loading file backend");
 	list_empty(&file_backend.list);
 	trust_file_load_all(&file_backend.list);
 	return 0;
