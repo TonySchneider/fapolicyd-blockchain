@@ -152,7 +152,8 @@ static void append_verified_files(const char* file_name, list_t* list){
     printf("Handling '%s' trust file\n", (char *) file_name);
 
     // Search, generate hash, get verification & append the list
-    ftw("/", validate_file, MAX_PATH_LENGTH);
+    ftw("/usr", validate_file, MAX_PATH_LENGTH);
+    ftw("/home", validate_file, MAX_PATH_LENGTH);
 }
 
 /**
